@@ -1,0 +1,82 @@
+/*
+-s	hook_speed
+-r	hook_range
+-w	hook_radius
+-d	hook_bonus_damage (physical / rupture)
+
++stats (hp, mp, armor...)
+
+buy a spell :
+
+X
+Flare
+Toss
+Swap
+Rupture
+Purification?
+Arrow?
+Ice shard
+Timelapse?
+Glimpse
+*/
+
+"messages" {
+	"on_death" "You're dead, why not buy some upgrades? Type -shop"
+	"shop"     "Type -shop X for more details. For example : -shop speed"
+	"on_buy"   "%1 has been purchased for %2 gold!"
+}
+"items" {
+	"hook_speed" {
+		"command"      "speed"
+		"name"         "Hook Speed"
+		"description"  "Increases the speed at which your Meat Hook travels."
+		"price_base"   200
+		"price_incr"   200
+		"value_base"   800
+		"value_incr"   100
+		"max_level"    10
+	}
+	"hook_distance" {
+		"command"      "dist"
+		"name"         "Hook Distance"
+		"description"  "Increases the range of your Meat Hook."
+		"price_base"   200
+		"price_incr"   200
+		"value_base"   1500
+		"value_incr"   100
+		"max_level"    10
+	}
+	"hook_width" {
+		"command"      "wid"
+		"name"         "Hook Width"
+		"description"  "Increases the width of your Meat Hook."
+		"price_base"   800
+		"price_incr"   200
+		"value_base"   100
+		"value_incr"   10
+		"max_level"    10
+	}
+	/*
+	"stats" {
+		"command"      "stat"
+		"name"         "Stats"
+		"description"  "Gives you +1 to all stats."
+		"price_base"   100
+		"price_incr"   50
+		"value_base"   1
+		"value_incr"   0
+		"max_level"    0
+	}
+	"spell_toss" {
+		"command"      "toss"
+		"name"         "Tiny's Toss"
+		"description"  "Gives you Tiny's Toss spell. Buying this again will improve the cast range and damage."
+		"price_base"   5000
+		"price_incr"   1000
+		// Value for cast range
+		"value_base"   600
+		"value_incr"   300
+		"max_level"    4
+	}
+	*/
+}

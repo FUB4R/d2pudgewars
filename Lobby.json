@@ -1,0 +1,20 @@
+{
+	"mainFields": ["MaxScore"], 
+	"fields":
+	{
+		"MaxScore":
+		{
+			"type": "select",
+			"options":
+			[
+				"25",
+				"50",
+				"75",
+				"100",
+				"150",
+				"200",
+				"1000 !!"
+			]
+		}
+	}
+}

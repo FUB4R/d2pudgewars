@@ -1,49 +1,110 @@
 "GameProps" {
-	"Vision"	5000
-	"HPregen"	1
+	"Vision"	800
+	"HeroVision" 600
+	"HPregen"	0.0
+	"MPregen"	0.5
+	"ResTime"	5.0
 }
 // Map bounds. this is a polygon defined by n points.
 // Traverse them counter-clockwise
 "MapBounds" [
 	{
-		"x"	-1330
-		"y"	1600
+		"x"	-736
+		"y"	1824
 	}{
-		"x"	-2067
-		"y"	938
+		"x"	-1900
+		"y"	630
 	}{
-		"x"	-2016
-		"y"	-224
+		"x"	-1860
+		"y"	-850
 	}{
-		"x"	1623
-		"y"	-2546
+		"x"	1150
+		"y"	-2220
 	}{
-		"x"	2520
-		"y"	-1465
+		"x"	1443
+		"y"	-2076
+	}{
+		"x"	2550
+		"y"	-1075
 	}
 ]
-// TODO player spawn points
 "PlayerSpawns" {
+	"radiant" [
+		{
+			"x"	-1280
+			"y"	-880
+		}{
+			"x"	-1675
+			"y"	-540
+		}{
+			"x" -290
+			"y"	-1415
+		}{
+			"x" 825
+			"y"	-1780
+		}
+	]
+	"dire" [
+		{
+			"x" 330
+			"y"	360
+		}{
+			"x" 970
+			"y"	-215
+		}{
+			"x" 2050
+			"y"	-970
+		}{
+			"x" -160
+			"y"	1060
+		}
+	]
+}
+"Fountains" {
 	"radiant" {
-		"x"	-1038
-		"y"	-620
+		"x"	-1620
+		"y"	-1340
 	}
 	"dire" {
-		"x"	-94
-		"y"	136
+		"x"	1300
+		"y" 800
 	}
 }
 // Values for abilities
 "AbilityVals" {
-	"pudge_meat_hook" {
-		"max_charges"	4
-		"charge_ticks" [
-			30
-			30
-			30
-			60
+	"item_blink" {
+		"cooldown_field" "blink_range"
+		"cooldown" [
+			10
 		]
-		// Damage doesn't work, M28plsfixkthx
+		"blink_range" [
+			1200
+		]
+		"blink_range_clamp"	[
+			1200
+		]
+	}
+	"item_soul_ring" {
+		"cooldown" [
+			0
+		]
+	}
+	"item_tranquil_boots" {
+		"cooldown_field" 	"heal_duration"
+		"cooldown" [
+			20
+		]
+		"bonus_armor"		0
+	}
+	"pudge_meat_hook" {
+		"cooldown_field" "hook_width"
+		"cooldown" [
+			3
+			3
+			3
+			3
+		]
+		// Damage doesn't work
 		"hook_damage" [
 			90
 			180
@@ -51,274 +112,168 @@
 			360
 		]
 		"hook_distance" [
-			1400
-			1500
 			1600
+			1800
 			2000
+			2200
 		]
 		"hook_width" [
-			200
-			210
-			220
-			250
+			100
+			100
+			100
+			100
 		]
 		"hook_speed" [
-			1200
-			1300
+			800
+			1100
 			1400
 			1700
 		]
-	}
-	"shredder_timber_chain" {
-		"max_charges"	4
-		"charge_ticks" [
-			200
-			200
-			200
-			300
-		]
-		"speed" [
-			1200
-			1400
-			1600
-			2000
-		]
-		"range" [
-			3000
-			3000
-			3000
-			3000
-		]
-		"chain_radius" [
-			120
-			130
-			140
-			160
-		]
-		"damage" [
-			0
-			0
-			0
-			0
-		]
-		"damage_radius" [
-			0
-			0
-			0
-			0
-		]
-	}
-	"rattletrap_hookshot" {
-		"max_charges"	3
-		"charge_ticks" [
-			150
-			150
-			300
-		]
-		"speed" [
-			1200
-			1400
+		"vision_radius" [
+			1800
+			1800
+			1800
 			1800
 		]
-		"latch_radius" [
-			125
-			150
-			200
-		]
-		"duration" [
-			0
-			0
-			0
-		]
-		"damage" [
-			100
-			200
-			350
-		]
-		"stun_radius" [
-			0
-			0
-			0
-		]
-	}
-	"vengefulspirit_wave_of_terror" {
-		"max_charges"	4
-		"charge_ticks" [
-			20
-			20
-			20
-			20
-		]
-	}
-	"tiny_toss" {
-		"max_charges"	4
-		"charge_ticks" [
-			100
-			100
-			100
-			300
-		]
-		"grab_radius" [
-			150
-			180
-			240
-			350
-		]
-		"radius" [
-			300
-			300
-			300
-			300
-		]
-		"toss_damage" [
-			100
-			175
-			250
-			400
-		]
-		"bonus_damage_pct" [
-			30
-			40
-			50
-			80
-		]
-	}
-	"weaver_shukuchi" {
-		"max_charges"	4
-		"charge_ticks" [
-			150
-			150
-			150
-			250
-		]
-		"duration" [
-			0.6
-			0.9
-			1.2
-			1.5
-		]
-		"fade_time" [
-			4
-			3
-			2.5
+		"vision_duration" [
 			1
-		]
-		"radius" [
-			400
-			400
-			400
-			100
-		]
-		"damage" [
-			0
-			0
-			0
-			0
-		]
-	}
-	"rattletrap_rocket_flare" {
-		"max_charges"	4
-		"charge_ticks" [
-			100
-			100
-			100
-			200
-		]
-		"speed" [
-			2500
-			2000
-			1500
-			500
-		]	
-		"vision_radius" [
-			400
-			500
-			600
-			1000
-		]
-	}
-	"bloodseeker_rupture" {
-		"max_charges"	3
-		"charge_ticks" [
-			200
-			300
-			450
-		]
-		"duration" [
-			6
-			8
-			10
-		]
-		"movement_damage_pct" [
-			20
-			50
-			100
-		]
-		"damage_cap_amount" [
-			250
-			250
-			250
-		]
-		"damage_cap_interval" [
-			250
-			250
-			250
-		]
-	}
-	"vengefulspirit_nether_swap" {
-		"max_charges"	3
-		"charge_ticks" [
-			400
-			400
-			400
+			2
+			3
+			3
 		]
 	}
 	"kunkka_x_marks_the_spot" {
-		"max_charges"	4
-		"charge_ticks" [
-			100
-			100
-			100
-			100
-		]
-	}
-	"slark_pounce" {
-		"max_charges"	4
-		"charge_ticks" [
-			50
-			50
-			50
-			100
-		]
-		"distance" [
-			400
-			500
-			600
-			700
-		]
-		"speed" [
-			1000
-		]
-		"acceleration" [
-			10000
-		]
-		"radius" [
-			95
-			105
-			115
-			140
-		]
-		"damage" [
-			100
-			150
-			200
-			300
+		"cooldown" [
+			16
+			12
+			8
+			4
 		]
 		"duration" [
+			3
+			3
+			3
+			3
+		]
+		"fow_duration" [
 			2
 			3
 			4
-			6
+			5
+		]
+		"fow_range" [
+			600
+			800
+			1000
+			1200
+		]
+	}
+	"rattletrap_rocket_flare" {
+		"cooldown_field" "speed"
+		"cooldown" [
+			10
+			10
+			10
+			10
+		]
+		"speed" [
+			1000
+			1500
+			2000
+			2500
+		]
+		"vision_radius" [
+			600
+			600
+			600
+			600
+		]
+		"radius" [
+			600
+			600
+			600
+			600
+		]
+		"duration" [
+			4.0
+			7.0
+			10.0
+			13.0
+		]
+	}
+	"vengefulspirit_nether_swap" {
+		"cooldown" [
+			20
+			15
+			10
+		]
+		"cast_range" [
+			900
+			1200
+			1500
 		]
 	}
 }
+"HeroID" {
+	"npc_dota_hero_pudge" 14
+	"npc_dota_hero_abaddon" 102
+	"npc_dota_hero_huskar" 59
+	"npc_dota_hero_sven" 18
+	"npc_dota_hero_shredder" 98
+	"npc_dota_hero_tusk" 100
+	"npc_dota_hero_tidehunter" 29
+	"npc_dota_hero_kunkka" 23
+	"npc_dota_hero_life_stealer" 54
+	"npc_dota_hero_sand_king" 16
+	"npc_dota_hero_spirit_breaker" 71
+	"npc_dota_hero_tiny" 19
+}
+"HeroModels" {
+	"npc_dota_hero_pudge" "models/heroes/pudge/pudge.mdl"
+}
+"PlayerParticles" [
+	{
+		"name" "enigma_ambient_body"
+		"file" "particles/units/heroes/hero_enigma.pcf"
+	}{
+		"name" "maiden_frostbite_buff"
+		"file" "particles/units/heroes/hero_crystalmaiden.pcf"
+	}{
+		"name" "invoker_alacrity"
+		"file" "particles/units/heroes/hero_invoker.pcf"
+	}{
+		"name" "omniknight_repel_buff"
+		"file" "particles/units/heroes/hero_omniknight.pcf"
+	}{
+		"name" "gyro_guided_missile_target"
+		"file" "particles/units/heroes/hero_bristleback.pcf"
+	}{
+		"name" "warlock_shadow_word_buff"
+		"file" "particles/units/heroes/hero_warlock.pcf"
+	}{
+		"name" "juggernaut_blade_fury_ground"
+		"file" "particles/units/heroes/hero_juggernaut.pcf"
+	}{
+		"name" "bloodseeker_rupture"
+		"file" "particles/units/heroes/hero_bloodseeker.pcf"
+	}{
+		"name" "morphling_ambient"
+		"file" "particles/units/heroes/hero_morphling.pcf"
+	}{
+		"name" "pudge_rot"
+		"file" "particles/units/heroes/hero_pudge.pcf"
+	}{
+		"name" "puck_phase_shift"
+		"file" "particles/units/heroes/hero_puck.pcf"
+	}{
+		"name" "spectre_ambient"
+		"file" "particles/units/heroes/hero_spectre.pcf"
+	}{
+		"name" "treant_livingarmor"
+		"file" "particles/units/heroes/hero_treant.pcf"
+		"points" 2
+	}{
+		"name" "sven_warcry_buff"
+		"file" "particles/units/heroes/hero_sven.pcf"
+	}
+]
