@@ -1,0 +1,324 @@
+"GameProps" {
+	"Vision"	5000
+	"HPregen"	1
+}
+// Map bounds. this is a polygon defined by n points.
+// Traverse them counter-clockwise
+"MapBounds" [
+	{
+		"x"	-1330
+		"y"	1600
+	}{
+		"x"	-2067
+		"y"	938
+	}{
+		"x"	-2016
+		"y"	-224
+	}{
+		"x"	1623
+		"y"	-2546
+	}{
+		"x"	2520
+		"y"	-1465
+	}
+]
+// TODO player spawn points
+"PlayerSpawns" {
+	"radiant" {
+		"x"	-1038
+		"y"	-620
+	}
+	"dire" {
+		"x"	-94
+		"y"	136
+	}
+}
+// Values for abilities
+"AbilityVals" {
+	"pudge_meat_hook" {
+		"max_charges"	4
+		"charge_ticks" [
+			30
+			30
+			30
+			60
+		]
+		// Damage doesn't work, M28plsfixkthx
+		"hook_damage" [
+			90
+			180
+			270
+			360
+		]
+		"hook_distance" [
+			1400
+			1500
+			1600
+			2000
+		]
+		"hook_width" [
+			200
+			210
+			220
+			250
+		]
+		"hook_speed" [
+			1200
+			1300
+			1400
+			1700
+		]
+	}
+	"shredder_timber_chain" {
+		"max_charges"	4
+		"charge_ticks" [
+			200
+			200
+			200
+			300
+		]
+		"speed" [
+			1200
+			1400
+			1600
+			2000
+		]
+		"range" [
+			3000
+			3000
+			3000
+			3000
+		]
+		"chain_radius" [
+			120
+			130
+			140
+			160
+		]
+		"damage" [
+			0
+			0
+			0
+			0
+		]
+		"damage_radius" [
+			0
+			0
+			0
+			0
+		]
+	}
+	"rattletrap_hookshot" {
+		"max_charges"	3
+		"charge_ticks" [
+			150
+			150
+			300
+		]
+		"speed" [
+			1200
+			1400
+			1800
+		]
+		"latch_radius" [
+			125
+			150
+			200
+		]
+		"duration" [
+			0
+			0
+			0
+		]
+		"damage" [
+			100
+			200
+			350
+		]
+		"stun_radius" [
+			0
+			0
+			0
+		]
+	}
+	"vengefulspirit_wave_of_terror" {
+		"max_charges"	4
+		"charge_ticks" [
+			20
+			20
+			20
+			20
+		]
+	}
+	"tiny_toss" {
+		"max_charges"	4
+		"charge_ticks" [
+			100
+			100
+			100
+			300
+		]
+		"grab_radius" [
+			150
+			180
+			240
+			350
+		]
+		"radius" [
+			300
+			300
+			300
+			300
+		]
+		"toss_damage" [
+			100
+			175
+			250
+			400
+		]
+		"bonus_damage_pct" [
+			30
+			40
+			50
+			80
+		]
+	}
+	"weaver_shukuchi" {
+		"max_charges"	4
+		"charge_ticks" [
+			150
+			150
+			150
+			250
+		]
+		"duration" [
+			0.6
+			0.9
+			1.2
+			1.5
+		]
+		"fade_time" [
+			4
+			3
+			2.5
+			1
+		]
+		"radius" [
+			400
+			400
+			400
+			100
+		]
+		"damage" [
+			0
+			0
+			0
+			0
+		]
+	}
+	"rattletrap_rocket_flare" {
+		"max_charges"	4
+		"charge_ticks" [
+			100
+			100
+			100
+			200
+		]
+		"speed" [
+			2500
+			2000
+			1500
+			500
+		]	
+		"vision_radius" [
+			400
+			500
+			600
+			1000
+		]
+	}
+	"bloodseeker_rupture" {
+		"max_charges"	3
+		"charge_ticks" [
+			200
+			300
+			450
+		]
+		"duration" [
+			6
+			8
+			10
+		]
+		"movement_damage_pct" [
+			20
+			50
+			100
+		]
+		"damage_cap_amount" [
+			250
+			250
+			250
+		]
+		"damage_cap_interval" [
+			250
+			250
+			250
+		]
+	}
+	"vengefulspirit_nether_swap" {
+		"max_charges"	3
+		"charge_ticks" [
+			400
+			400
+			400
+		]
+	}
+	"kunkka_x_marks_the_spot" {
+		"max_charges"	4
+		"charge_ticks" [
+			100
+			100
+			100
+			100
+		]
+	}
+	"slark_pounce" {
+		"max_charges"	4
+		"charge_ticks" [
+			50
+			50
+			50
+			100
+		]
+		"distance" [
+			400
+			500
+			600
+			700
+		]
+		"speed" [
+			1000
+		]
+		"acceleration" [
+			10000
+		]
+		"radius" [
+			95
+			105
+			115
+			140
+		]
+		"damage" [
+			100
+			150
+			200
+			300
+		]
+		"duration" [
+			2
+			3
+			4
+			6
+		]
+	}
+}
